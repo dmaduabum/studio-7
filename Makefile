@@ -1,6 +1,6 @@
 # ==========================================================
 # Studio 07 — Robust Regression with Heavy-Tailed Errors
-# Author: [Your Name or Group Name]
+# Author: Dili Maduabum
 #
 # This Makefile automates the full workflow:
 #   1. Run simulation experiments
