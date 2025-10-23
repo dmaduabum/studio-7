@@ -50,17 +50,18 @@ def sample_true_coefficients(p, rng):
 def compute_sigma_for_snr(X, beta, target_snr):
     """
     Compute the noise standard deviation (sigma) so that:
-        Var(Xβ) / sigma² ≈ target_snr
+        SNR = (betaᵀ Xᵀ X beta) / sigma² ≈ target_snr
     """
-    # Compute variance of the signal (Xβ)
-    signal_var = (X@ beta).T @ (X@ beta)
+    # Compute signal energy βᵀ Xᵀ X β
+    signal_power = float((X @ beta).T @ (X @ beta))
 
-    # Rearrange SNR = signal_var / sigma²  →  sigma² = signal_var / SNR
-    sigma2 = signal_var / float(target_snr)
+    # Derive sigma² = (βᵀ Xᵀ X β) / SNR
+    sigma2 = signal_power / float(target_snr)
 
-    # Avoid division by zero or negative due to numerical precision
+    # Avoid numerical issues (just a safeguard)
     sigma = np.sqrt(max(sigma2, 1e-12))
     return sigma
+
 
 def sample_error_vector(n, df, sigma, rng):
     """

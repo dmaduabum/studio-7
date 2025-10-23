@@ -16,14 +16,15 @@ from src.metrics import compute_mse, record_result, results_to_dataframe
 
 def run_simulation(
     n=200,
-    gammas=(0.2,0.5,0.8),
-    rhos=(0.1,0.5,0.9,-0.2),
-    dfs=(1, 2,3, 20,np.inf),
-    snrs=(1,5,10),
-    reps=5,
+    gammas=(0.2, 0.5, 0.8),       # aspect ratios (p/n)
+    rhos=(0.1, 0.5, 0.9),         # positive corr among predictors
+    dfs=(1, 2, 3, 20, np.inf),    # Student-t degrees of freedom
+    snrs=(1, 5, 10),              # signal-to-noise ratios
+    reps=5,                       # number of replicates
     seed=123,
     out_path="results/raw/simulation_results.csv"
 ):
+
     """Run simulation grid and save results as CSV."""
     # Random number generator for reproducibility
     rng = np.random.default_rng(seed)
