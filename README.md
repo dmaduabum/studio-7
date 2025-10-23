@@ -105,8 +105,3 @@ Each figure plots MSE vs degrees of freedom (df) for all estimators, with small 
 **Dili Maduabum**   
 [University of Michigan / Department of Economics]
 
----
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
