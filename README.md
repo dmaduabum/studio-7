@@ -1,6 +1,6 @@
 # Studio 07 – Robust Regression with Heavy-Tailed Errors
 
-This project investigates how **heavy-tailed error distributions** affect the performance of different linear regression estimators in high-dimensional settings.
+This project investigates how **heavy-tailed error distributions** affect the performance of different linear regression estimators in high-dimensional settings. This is a studio in class Stat 607.
 
 
 ---
